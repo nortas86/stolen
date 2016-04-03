@@ -8,22 +8,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Arazo</a>
+            <a class="navbar-brand" href="#">Stolen</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-                <li><a href="#">Link 5</a></li>
+                <li><a href="{{ path('house') }}"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="{{ path('car') }}"><i class="fa fa-car fa-lg"></i></a></li>
+                <li><a href="{{ path('motorcycle') }}"><i class="fa fa-motorcycle fa-lg"></i></a></li>
+                <li><a href="{{ path('bike') }}"><i class="fa fa-bicycle fa-lg"></i></a></li>
+                <li><a href="{{ path('other') }}"><i class="fa fa-plus fa-lg"></i></a></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link Last</a></li>
+                <li><a href="{{ path('search') }}"><i class="fa fa-search fa-lg"></i></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-male fa-lg"></i>
+<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('login') }}">Login</a></li>
                         <li><a href="{{ path('register') }}">Register</a></li>
