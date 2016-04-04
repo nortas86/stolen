@@ -1,8 +1,32 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
+
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-register'}}) }}
+    {{ form_errors(form) }}
+    
+        <h2 class="form-singin-heading">Register</h2>
+        
+        {{ form_widget(form.username, {'attr':{'class':'form-control','placeholder':'Username'}} ) }}
+
+        {{ form_errors(form.username) }}
+
+        {{ form_widget(form.email, {'attr':{'class':'form-control','placeholder':'Email Address'}} ) }}
+
+        {{ form_errors(form.email) }}
+
+        {{ form_widget(form.plainPassword.first, {'attr':{'class':'form-control','placeholder':'Password'}} ) }}
+
+        {{ form_errors(form.plainPassword.first) }}
+
+        {{ form_widget(form.plainPassword.second, {'attr':{'class':'form-control','placeholder':'Password Confirm'}} ) }}
+
+        {{ form_errors(form.plainPassword.second) }}
+
+        <input type="submit" 
+            class="btn btn-lg btn-primary btn-block" 
+            id="_submit" 
+            name="_submit" 
+            value="{{ 'registration.submit'|trans }}" />
+        
 {{ form_end(form) }}
