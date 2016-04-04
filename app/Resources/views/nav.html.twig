@@ -21,6 +21,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
+                    <a href="{{ path('person') }}">
+                        <i  {% if route_name == "person" %}
+                                {{ 'style="color:white;"' }}
+                            {% endif %}
+                        class="fa fa-child fa-lg"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('animal') }}">
+                        <i  {% if route_name == "animal" %}
+                                {{ 'style="color:white;"' }}
+                            {% endif %}
+                        class="fa fa-paw fa-lg"></i>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ path('house') }}">
                         <i  {% if route_name == "house" %}
                                 {{ 'style="color:white;"' }}
