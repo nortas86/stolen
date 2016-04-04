@@ -2,6 +2,7 @@ nav:
     login: 'Σύνδεση'
     register: 'Εγγραφή'
     logout: 'Έξοδος'
+    settings: 'Ρυθμίσεις'
 group:
     edit:
         submit: 'Ενημέρωση ομάδας'
