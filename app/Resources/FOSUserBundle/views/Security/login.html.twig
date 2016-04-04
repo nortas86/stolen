@@ -16,12 +16,12 @@
 
     <h2 class="form-singin-heading">Please sign in</h2>
     <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Email address" required autofocus>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Username or Email address" required autofocus>
     <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
     <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required>
     <div class="checkbox">
         <label>
-            <input type="checkbox" value="remember-me"> {{ 'security.login.remember_me'|trans }}
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans }}
         </label>
     </div>
     <input type="submit" 
