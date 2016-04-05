@@ -24,6 +24,7 @@ class UserInformationController extends Controller
      * @Method({"GET", "POST"})
      */
     public function replaceAction( Request $request ){
+        
         $user_id = $this->getUser()->getId();
         
         $em = $this->getDoctrine()->getManager();
@@ -39,12 +40,12 @@ class UserInformationController extends Controller
                 $em->persist($userInformation);
                 $em->flush();
 
-                return $this->redirectToRoute('userinformation_edit', array('id' => $userInformation->getId()));
+                return $this->redirectToRoute('userinformation_replace');
             }
 
-            return $this->render('AppBundle:UserInformation:edit.html.twig', array(
+            return $this->render('AppBundle:UserInformation:replace.html.twig', array(
                 'userInformation' => $userInformation,
-                'edit_form' => $editForm->createView(),
+                'form' => $editForm->createView(),
 
             ));
         }else{
@@ -58,10 +59,10 @@ class UserInformationController extends Controller
                 $em->persist($userInformation);
                 $em->flush();
 
-                return $this->redirectToRoute('userinformation_show', array('id' => $userInformation->getId()));
+                return $this->redirectToRoute('userinformation_replace');
             }
 
-            return $this->render('AppBundle:UserInformation:new.html.twig', array(
+            return $this->render('AppBundle:UserInformation:replace.html.twig', array(
                 'userInformation' => $userInformation,
                 'form' => $form->createView(),
             ));
