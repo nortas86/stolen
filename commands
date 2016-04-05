@@ -1,0 +1,13 @@
+Clears Cache
+php bin/console cache:clear
+
+Database update
+php bin/console doctrine:schema:update
+--force: run sql
+--dump-sql: show sql
+
+Generates Getters/Setters
+php bin/console doctrine:generate:entities AppBundle/Entity/Bike
+
+Create CRUD
+php bin/console generate:doctrine:crud
