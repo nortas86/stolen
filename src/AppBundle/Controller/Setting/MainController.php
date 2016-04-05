@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class MainController extends Controller
 {
     /**
-     * @Route("/setting", name="setting")
+     * @Route("/setting2", name="setting2")
      */
     public function showAction()
     {

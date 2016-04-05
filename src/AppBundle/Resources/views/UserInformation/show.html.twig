@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>UserInformation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ userInformation.id }}</td>
+            </tr>
+            <tr>
+                <th>First_name</th>
+                <td>{{ userInformation.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Last_name</th>
+                <td>{{ userInformation.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ userInformation.language }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ userInformation.country }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ userInformation.phone }}</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>{{ userInformation.mobile }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ userInformation.city }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ userInformation.address }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('userinformation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('userinformation_edit', { 'id': userInformation.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

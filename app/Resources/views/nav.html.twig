@@ -97,7 +97,7 @@
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <li><a href="{{ path('setting') }}">{{ 'nav.settings'|trans }}</a></li>
+                            <li><a href="{{ path('userinformation_index') }}">{{ 'nav.settings'|trans }}</a></li>
                             <li><a href="{{ path('fos_user_security_logout') }}">{{ 'nav.logout'|trans }}</a></li>
                         {% else %}
                             <li><a href="{{ path('fos_user_security_login') }}">{{ 'nav.login'|trans }}</a></li>
