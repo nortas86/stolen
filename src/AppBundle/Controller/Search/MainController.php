@@ -1,18 +1,18 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Search;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class SettingsController extends Controller
+class MainController extends Controller
 {
     /**
-     * @Route("/setting", name="setting")
+     * @Route("/search", name="search")
      */
     public function showAction()
     {
-        return $this->render('AppBundle:Setting:main.html.twig', array(
+        return $this->render('AppBundle:Search:main.html.twig', array(
             // ...
         ));
     }

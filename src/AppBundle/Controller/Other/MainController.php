@@ -1,18 +1,18 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Other;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class CarController extends Controller
+class MainController extends Controller
 {
     /**
-     * @Route("/car", name="car")
+     * @Route("/other", name="other")
      */
     public function showAction()
     {
-        return $this->render('AppBundle:Car:main.html.twig', array(
+        return $this->render('AppBundle:Other:main.html.twig', array(
             // ...
         ));
     }

@@ -1,18 +1,18 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\House;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class SearchController extends Controller
+class MainController extends Controller
 {
     /**
-     * @Route("/search", name="search")
+     * @Route("/house", name="house")
      */
     public function showAction()
     {
-        return $this->render('AppBundle:Search:main.html.twig', array(
+        return $this->render('AppBundle:House:main.html.twig', array(
             // ...
         ));
     }

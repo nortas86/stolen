@@ -1,11 +1,11 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Motorcycle;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class MotorcycleController extends Controller
+class MainController extends Controller
 {
     /**
      * @Route("/motorcycle", name="motorcycle")
