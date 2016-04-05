@@ -1,8 +1,9 @@
 nav:
-    login: 'Σύνδεση'
-    register: 'Εγγραφή'
-    logout: 'Έξοδος'
-    settings: 'Ρυθμίσεις'
+    login: Σύνδεση
+    register: Εγγραφή
+    logout: Έξοδος
+    settings: Ρυθμίσεις
+    search: Αναζήτηση
 group:
     edit:
         submit: 'Ενημέρωση ομάδας'

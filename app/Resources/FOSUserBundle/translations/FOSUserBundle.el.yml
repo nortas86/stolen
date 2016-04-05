@@ -11,6 +11,7 @@ group:
         deleted: 'Η ομάδα διαγράφηκε επιτυχώς'
 security:
     login:
+        please: 'Παρακαλώ συνδεθείτε'
         username: 'Όνομα Χρήστη'
         password: 'Κωδικός Πρόσβασης'
         remember_me: 'Να με θυμάσαι'

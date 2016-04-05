@@ -5,21 +5,21 @@
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-register'}}) }}
     {{ form_errors(form) }}
     
-        <h2 class="form-singin-heading">Register</h2>
+        <h2 class="form-singin-heading">{{ 'registration.submit'|trans }}</h2>
         
-        {{ form_widget(form.username, {'attr':{'class':'form-control','placeholder':'Username'}} ) }}
+        {{ form_widget(form.username, {'attr':{'class':'form-control','placeholder':'form.username'|trans }} ) }}
 
         {{ form_errors(form.username) }}
 
-        {{ form_widget(form.email, {'attr':{'class':'form-control','placeholder':'Email Address'}} ) }}
+        {{ form_widget(form.email, {'attr':{'class':'form-control','placeholder':'form.email'|trans }} ) }}
 
         {{ form_errors(form.email) }}
 
-        {{ form_widget(form.plainPassword.first, {'attr':{'class':'form-control','placeholder':'Password'}} ) }}
+        {{ form_widget(form.plainPassword.first, {'attr':{'class':'form-control','placeholder':'form.password'|trans }} ) }}
 
         {{ form_errors(form.plainPassword.first) }}
 
-        {{ form_widget(form.plainPassword.second, {'attr':{'class':'form-control','placeholder':'Password Confirm'}} ) }}
+        {{ form_widget(form.plainPassword.second, {'attr':{'class':'form-control','placeholder':'form.password_confirmation'|trans }} ) }}
 
         {{ form_errors(form.plainPassword.second) }}
 
