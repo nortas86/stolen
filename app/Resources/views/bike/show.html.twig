@@ -6,8 +6,8 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ bike.id }}</td>
+                <th>Guid</th>
+                <td>{{ bike.guid }}</td>
             </tr>
             <tr>
                 <th>Category</th>
@@ -37,14 +37,6 @@
                 <th>Brakes</th>
                 <td>{{ bike.brakes }}</td>
             </tr>
-            <tr>
-                <th>Created</th>
-                <td>{% if bike.created %}{{ bike.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Updated</th>
-                <td>{% if bike.updated %}{{ bike.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
         </tbody>
     </table>
 
@@ -53,7 +45,7 @@
             <a href="{{ path('bike_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('bike_edit', { 'id': bike.id }) }}">Edit</a>
+            <a href="{{ path('bike_edit', { 'id': bike.guid }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -14,10 +14,10 @@ class Bike
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="guid")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $guid;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -54,21 +54,6 @@ class Bike
      */
     protected $brakes;
     
-    /**
-    * @var datetime $created
-    *
-    * @Gedmo\Timestampable(on="create")
-    * @ORM\Column(type="datetime")
-    */
-    private $created;
-
-   /**
-    * @var datetime $updated
-    *
-    * @Gedmo\Timestampable(on="update")
-    * @ORM\Column(type="datetime")
-    */
-    private $updated;
     
     public function __construct()
     {
@@ -300,5 +285,15 @@ class Bike
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Get guid
+     *
+     * @return guid
+     */
+    public function getGuid()
+    {
+        return $this->guid;
     }
 }
