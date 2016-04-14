@@ -45,7 +45,7 @@
             <a href="{{ path('bike_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('bike_edit', { 'id': bike.guid }) }}">Edit</a>
+            <a href="{{ path('bike_edit', { 'guid': bike.guid }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

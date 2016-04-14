@@ -15,7 +15,7 @@ class Bike
     /**
      * @ORM\Id
      * @ORM\Column(type="guid")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     protected $guid;
 
@@ -61,14 +61,16 @@ class Bike
         // your own logic
     }
 
+
+
     /**
-     * Get id
+     * Get guid
      *
-     * @return integer
+     * @return guid
      */
-    public function getId()
+    public function getGuid()
     {
-        return $this->id;
+        return $this->guid;
     }
 
     /**
@@ -122,7 +124,7 @@ class Bike
     /**
      * Set year
      *
-     * @param \Date $year
+     * @param \DateTime $year
      *
      * @return Bike
      */
@@ -136,7 +138,7 @@ class Bike
     /**
      * Get year
      *
-     * @return \Date
+     * @return \DateTime
      */
     public function getYear()
     {
@@ -237,63 +239,5 @@ class Bike
     public function getBrakes()
     {
         return $this->brakes;
-    }
-
-    /**
-     * Set created
-     *
-     * @param \DateTime $created
-     *
-     * @return Bike
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     *
-     * @return Bike
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
-     * Get guid
-     *
-     * @return guid
-     */
-    public function getGuid()
-    {
-        return $this->guid;
     }
 }

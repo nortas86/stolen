@@ -17,7 +17,7 @@ class BikeType extends AbstractType
         $builder
             ->add('category')
             ->add('brand')
-            ->add('year', 'date')
+            ->add('year')
             ->add('size')
             ->add('color')
             ->add('gears')

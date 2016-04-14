@@ -47,10 +47,16 @@ class BikeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            
+
+            
             $em->persist($bike);
             $em->flush();
 
-            return $this->redirectToRoute('bike_show', array('id' => $bike->getId()));
+                        print_r($bike);
+            exit();
+            
+            return $this->redirectToRoute('bike_show', array('guid' => $bike->getGuid()));
         }
 
         return $this->render('bike/new.html.twig', array(
@@ -62,7 +68,7 @@ class BikeController extends Controller
     /**
      * Finds and displays a Bike entity.
      *
-     * @Route("/{id}", name="bike_show")
+     * @Route("/{guid}", name="bike_show")
      * @Method("GET")
      */
     public function showAction(Bike $bike)
@@ -78,7 +84,7 @@ class BikeController extends Controller
     /**
      * Displays a form to edit an existing Bike entity.
      *
-     * @Route("/{id}/edit", name="bike_edit")
+     * @Route("/{guid}/edit", name="bike_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Bike $bike)
@@ -92,7 +98,7 @@ class BikeController extends Controller
             $em->persist($bike);
             $em->flush();
 
-            return $this->redirectToRoute('bike_edit', array('id' => $bike->getId()));
+            return $this->redirectToRoute('bike_edit', array('guid' => $bike->getGuid()));
         }
 
         return $this->render('bike/edit.html.twig', array(
@@ -105,7 +111,7 @@ class BikeController extends Controller
     /**
      * Deletes a Bike entity.
      *
-     * @Route("/{id}", name="bike_delete")
+     * @Route("/{guid}", name="bike_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Bike $bike)
@@ -132,7 +138,7 @@ class BikeController extends Controller
     private function createDeleteForm(Bike $bike)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('bike_delete', array('id' => $bike->getId())))
+            ->setAction($this->generateUrl('bike_delete', array('guid' => $bike->getGuid())))
             ->setMethod('DELETE')
             ->getForm()
         ;

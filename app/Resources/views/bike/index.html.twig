@@ -3,23 +3,17 @@
 {% block body %}
     <h1>Bike list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Guid</th>
-                <th>Category</th>
-                <th>Brand</th>
-                <th>Year</th>
-                <th>Size</th>
-                <th>Color</th>
-                <th>Gears</th>
-                <th>Brakes</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+   
         {% for bike in bikes %}
-            <tr>
+            
+            <div class="list-group">
+                <a href="{{ path('bike_show', { 'guid': bike.guid }) }}" class="list-group-item">
+                    <h4 class="list-group-item-heading">{{ bike.category }}</h4>
+                    <p class="list-group-item-text">{{ bike.brand }}</p>
+                </a>
+            </div>
+            
+            {#<tr>
                 <td><a href="{{ path('bike_show', { 'id': bike.guid }) }}">{{ bike.guid }}</a></td>
                 <td>{{ bike.category }}</td>
                 <td>{{ bike.brand }}</td>
@@ -38,10 +32,9 @@
                         </li>
                     </ul>
                 </td>
-            </tr>
+            </tr>#}
         {% endfor %}
-        </tbody>
-    </table>
+
 
     <ul>
         <li>
