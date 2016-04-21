@@ -42,7 +42,7 @@ class MainController extends Controller
     public function newAction(Request $request)
     {
         $bike = new Bike();
-        $form = $this->createForm('AppBundle\Form\BikeType', $bike);
+        $form = $this->createForm('AppBundle\Form\Bike\BikeType', $bike);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -90,7 +90,7 @@ class MainController extends Controller
     public function editAction(Request $request, Bike $bike)
     {
         $deleteForm = $this->createDeleteForm($bike);
-        $editForm = $this->createForm('AppBundle\Form\BikeType', $bike);
+        $editForm = $this->createForm('AppBundle\Form\Bike\BikeType', $bike);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
