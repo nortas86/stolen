@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bike list</h1>
 
-   
+    <div class="col-md-8">
+        <center><h2>Bike list</h2></center>
         {% for bike in bikes %}
             
             <div class="list-group">
@@ -35,10 +35,13 @@
             </tr>#}
         {% endfor %}
 
-
-    <ul>
-        <li>
-            <a href="{{ path('bike_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    </div>
+    <div class="col-md-4">
+        <center><h2>Create a new</h2></center>
+        <ul>
+            <li>
+                <a href="{{ path('bike_new') }}">Create a new entry</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

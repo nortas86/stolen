@@ -52,9 +52,6 @@ class MainController extends Controller
             
             $em->persist($bike);
             $em->flush();
-
-                        print_r($bike);
-            exit();
             
             return $this->redirectToRoute('bike_show', array('guid' => $bike->getGuid()));
         }
