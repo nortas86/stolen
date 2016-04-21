@@ -20,16 +20,33 @@ class MainController extends Controller
      * Lists all Bike entities.
      *
      * @Route("/", name="bike")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        //List
         $em = $this->getDoctrine()->getManager();
 
         $bikes = $em->getRepository('AppBundle:Bike')->findAll();
 
+        //New Bike
+        $bike = new Bike();
+        $form = $this->createForm('AppBundle\Form\Bike\BikeType', $bike);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($bike);
+            $em->flush();
+            
+            return $this->redirectToRoute('bike_show', array('guid' => $bike->getGuid()));
+        }
+        
+        
         return $this->render('AppBundle:Bike:index.html.twig', array(
             'bikes' => $bikes,
+            'bike'  => $bike,
+            'form'  => $form->createView(),
         ));
     }
 
@@ -47,9 +64,6 @@ class MainController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            
-
-            
             $em->persist($bike);
             $em->flush();
             

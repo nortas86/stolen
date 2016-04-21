@@ -5,43 +5,72 @@
     <div class="col-md-8">
         <center><h2>Bike list</h2></center>
         {% for bike in bikes %}
-            
             <div class="list-group">
                 <a href="{{ path('bike_show', { 'guid': bike.guid }) }}" class="list-group-item">
                     <h4 class="list-group-item-heading">{{ bike.category }}</h4>
                     <p class="list-group-item-text">{{ bike.brand }}</p>
                 </a>
             </div>
-            
-            {#<tr>
-                <td><a href="{{ path('bike_show', { 'id': bike.guid }) }}">{{ bike.guid }}</a></td>
-                <td>{{ bike.category }}</td>
-                <td>{{ bike.brand }}</td>
-                <td>{% if bike.year %}{{ bike.year|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ bike.size }}</td>
-                <td>{{ bike.color }}</td>
-                <td>{{ bike.gears }}</td>
-                <td>{{ bike.brakes }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('bike_show', { 'id': bike.guid }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('bike_edit', { 'id': bike.guid }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>#}
         {% endfor %}
-
     </div>
     <div class="col-md-4">
         <center><h2>Create a new</h2></center>
-        <ul>
-            <li>
-                <a href="{{ path('bike_new') }}">Create a new entry</a>
-            </li>
-        </ul>
+
+        {{ form_start(form) }}
+            {# Category #}
+            {{ form_widget(form.category, {'attr':{'class':'form-control','placeholder':'form.category'|trans }} ) }}
+            {% if form_errors(form.category) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.category) }}
+                </div>
+            {% endif %}
+            {# Brand #}
+            {{ form_widget(form.brand, {'attr':{'class':'form-control','placeholder':'form.brand'|trans }} ) }}
+            {% if form_errors(form.brand) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.brand) }}
+                </div>
+            {% endif %}
+            {# Year #}
+            {{ form_widget(form.year, {'attr':{'class':'form-control','placeholder':'form.year'|trans }} ) }}
+            {% if form_errors(form.year) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.year) }}
+                </div>
+            {% endif %}
+            {# Size #}
+            {{ form_widget(form.size, {'attr':{'class':'form-control','placeholder':'form.size'|trans }} ) }}
+            {% if form_errors(form.size) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.size) }}
+                </div>
+            {% endif %}
+            {# Color #}
+            {{ form_widget(form.color, {'attr':{'class':'form-control','placeholder':'form.color'|trans }} ) }}
+            {% if form_errors(form.color) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.color) }}
+                </div>
+            {% endif %}
+            {# Gears #}
+            {{ form_widget(form.gears, {'attr':{'class':'form-control','placeholder':'form.gears'|trans }} ) }}
+            {% if form_errors(form.gears) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.gears) }}
+                </div>
+            {% endif %}
+            {# Breaks #}
+            {{ form_widget(form.brakes, {'attr':{'class':'form-control','placeholder':'form.brakes'|trans }} ) }}
+            {% if form_errors(form.brakes) %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.brakes) }}
+                </div>
+            {% endif %}
+            {{ form_widget(form) }}
+            <input type="submit" 
+                class="btn btn-lg btn-primary btn-block" 
+                value="{{ 'form.create'|trans }}" />
+        {{ form_end(form) }}
+
     </div>
 {% endblock %}
